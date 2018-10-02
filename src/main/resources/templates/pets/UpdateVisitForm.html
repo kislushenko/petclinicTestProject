@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+
+  <h2>
+    Update Visit
+  </h2>
+
+  <form th:object="${visit}" class="form-horizontal" method="post">
+    <div class="form-group has-feedback">
+      <input
+        th:replace="~{fragments/inputField :: input ('Date', 'date', 'date')}"  />
+      <input
+        th:replace="~{fragments/inputField :: input ('Pet', 'petId', 'selectPet')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Veterenar', 'vet', 'select')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Description', 'description', 'text')}" />
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-default" type="submit">Update Visit</button>
+      </div>
+    </div>
+  </form>
+
+
+
+</body>
+</html>
